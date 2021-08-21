@@ -1,0 +1,29 @@
+.header{
+  background-color: rgb(17, 0, 255);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: clamp(2rem,4rem,6rem);
+  padding: 1rem;
+}
+
+
+
+.logo{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  text-shadow: -.1rem -.1rem  0 black;
+}
+
+.favoritos{
+  text-decoration: none;
+  color: rgb(8, 8, 8);
+  cursor: pointer;
+  text-shadow: -.1rem -.1rem  0 white;
+  border: .2rem solid black;
+  border-radius: 1.5rem;
+  padding: .5rem;
+  font-size: clamp(1rem,2rem,3rem);
+}
