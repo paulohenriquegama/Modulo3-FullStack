@@ -59,7 +59,7 @@ app.post('/animes', (req, res) => {
     anime.id = ultimoAnime.id+1;
     animes.push(anime);
   }else{
-    anime.id = '1';
+    anime.id = 1;
     animes.push(anime);
   }
 
