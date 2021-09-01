@@ -1,23 +1,26 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
-import FormAnime from './components/formAnimes/FormAnime';
+import FormAnime from './components/formAnimes/FormAnime'
 // import animes from './services/Animes'
-import ListarAnimes from './components/listarAnimes/ListarAnimes';
+import ListarAnimes from './components/listarAnimes/ListarAnimes'
+import AnimeProvider from './contexts/animeContext'
 
 function App() {
-  
-
-  // const [anime, setAnime] = useState(animes);
-
+  const [showForm,setShowForm] = useState(false)
 
   return (
     <div className="App">
-      <h1>Animes</h1>
-      <FormAnime/>
-      <div className="bloco-card">
-        <ListarAnimes/>
+      <AnimeProvider>
+        <header>
+          <h1>Animes</h1>
+          <button className="btn-show"onClick={() => setShowForm(!showForm)}>{showForm ?"-" :"+"}</button>
+          {showForm ? <FormAnime />: null}
 
-      </div>
+        </header>
+        <div className="bloco-card">
+          <ListarAnimes />
+        </div>
+      </AnimeProvider>
     </div>
   )
 }

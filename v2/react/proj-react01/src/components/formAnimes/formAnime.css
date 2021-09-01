@@ -1,3 +1,17 @@
 .bloco-form{
   color:azure;
+  margin: .5rem;
+  font-size: clamp(.5rem,1rem,6rem);
+ 
+}
+
+.btn-padrao{
+  margin-top: .5rem;
+  padding: .2rem;
+  width: 5.5rem;
+  cursor: pointer;
+  border-radius: .3rem;
+  border: 1px solid azure;
+  color: azure;
+  background-color: transparent;
 }

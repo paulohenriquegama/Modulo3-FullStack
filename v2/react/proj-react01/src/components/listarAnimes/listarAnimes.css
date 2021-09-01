@@ -1,1 +1,10 @@
-
+.bloco-card{
+  max-width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* background-color:rgb(255, 253, 127); */
+  margin: 0 auto;
+  
+}

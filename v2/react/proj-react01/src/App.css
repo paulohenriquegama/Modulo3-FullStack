@@ -1,15 +1,29 @@
-.App h1{
+
+.App header{
+  /* background-color: green; */
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+.App header h1{
+  width: 85%;
   color:azure;
   font-size: clamp(2rem,4rem,6rem);
   text-align: center;
+  padding-left: .8rem;
 }
-.bloco-card{
-  max-width: 80%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  /* background-color:rgb(255, 253, 127); */
-  margin: 0 auto;
+
+.btn-show{
   
+  padding: .2rem;
+  width: 2rem;
+  height: 3rem;
+  align-self: center;
+  font-size: clamp(2rem,4rem,6rem);
+  color: azure;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

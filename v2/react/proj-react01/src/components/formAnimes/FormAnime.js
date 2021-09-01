@@ -1,40 +1,39 @@
-import React, { useState } from 'react'
-import Animes from '../../services/Animes'
+import React, { useState, useContext } from 'react'
+// import Animes from '../../services/Animes'
 import './formAnime.css'
+import { AnimeContext } from '../../contexts/animeContext'
 
-export default function FormAnime() {
-  const [anime, setAnime] = useState([])
-  const [nome, setNome] = useState('')
-  const [img, setImg] = useState('')
+export default function FormAnime(props) {
+  const {saveAnime} = useContext(AnimeContext)
 
-  const handleSubmit = e => {
-    console.log(Animes)
-    e.defaultPrevented()
-    const id = Animes.length + 1
-    // if (!nome){
-    //   return;
-    // }
-    setAnime([
-      ...anime,
-      {
-        id: id,
-        nome: nome,
-        img: img
-      }
-    ])
+  const [anime, setAnime] = useState()
+  
+  function handleSubmit(e) {
+    e.preventDefault()
+    saveAnime(anime);
   }
-
+  
+  function limpar(){
+    document.getElementById('form').reset()
+  }
+  
+  
   return (
     <div className="bloco-form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="form">
         <label>Nome:</label>
         <br />
         <input
           type="text"
           id="nome"
-          value={nome}
-          onChange={e => {
-            setNome(e.target.value)
+          // value={anime[1].nome}
+          onChange={ (e) => {
+            setAnime({
+              ...anime,
+              nome: e.target.value,
+              
+            })
+            
           }}
         ></input>
         <br />
@@ -44,13 +43,17 @@ export default function FormAnime() {
         <input
           type="text"
           id="id"
-          value={img}
-          onChange={e => {
-            setImg(e.target.value)
-          }}
+          
+          onChange={ (e) => {
+            setAnime({
+              ...anime,
+              img: e.target.value,
+            })
+          } }
         ></input>
         <br />
-        <button type="submit">Salvar</button>
+        <button className="btn-padrao"onClick={limpar}>Salvar</button>
+        
       </form>
       
     </div>

@@ -11,7 +11,7 @@ const Card = props => {
 
       </div>
       <div className="card-button">
-        <button>Visualizar</button>
+        <button onClick={() => console.log("ID = ",props.idAnime)}>Visualizar</button>
       </div>
     </div>
   )
